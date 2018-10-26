@@ -5,6 +5,14 @@ const Films = function() {
   this.filmData = null;
 };
 
+Films.prototype.bindEvents = function () {
+  this.getData();
+  PubSub.subscribe("SelectFilm:change", (event) => {
+    const selectedIndex = event.detail;
+    this.publishFilmDetails(selectedIndex);
+  });
+};
+
 Films.prototype.getData = function () {
   const url = "https://ghibliapi.herokuapp.com/films";
   const request = new Request(url);
@@ -19,12 +27,9 @@ Films.prototype.getData = function () {
     })
 };
 
-// Films.prototype.bindEvents = function () {
-//
-// };
-
-// Films.prototype.publishFilmDetails = function () {
-//
-// };
+Films.prototype.publishFilmDetails = function (index) {
+  const selectedFilm = this.filmData[index];
+  PubSub.publish("Films:selected-film");
+};
 
 module.exports = Films;

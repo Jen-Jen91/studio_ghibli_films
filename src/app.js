@@ -14,6 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
   selectFilm.bindEvents();
 
   const films = new Films();
-  films.getData();
+  films.bindEvents();
 
 });
