@@ -15,7 +15,7 @@ Films.prototype.getData = function () {
      console.log(this.filmData);
     })
    .catch((error) => {
-      //PubSub.publish("Films:error", error);
+      PubSub.publish("Films:error", error);
     })
 };
 
