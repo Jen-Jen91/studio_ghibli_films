@@ -6,6 +6,7 @@ const FilmInfo = function (container, film) {
 FilmInfo.prototype.display = function () {
 
   const infoDiv = document.createElement("div");
+  infoDiv.classList.add("info-div");
 
   const filmTitle = this.createTitle();
   infoDiv.appendChild(filmTitle);
@@ -35,18 +36,30 @@ FilmInfo.prototype.createDescription = function () {
 };
 
 FilmInfo.prototype.createList = function () {
-  const detailsList = document.createElement("ul");
+  const detailsList = document.createElement("div");
 
-  const director = document.createElement("li");
-  director.textContent = `Director: ${this.film.director}`;
+  const directorLabel = document.createElement("h4");
+  directorLabel.textContent = "Director:";
+  detailsList.appendChild(directorLabel);
+
+  const director = document.createElement("p");
+  director.textContent = this.film.director;
   detailsList.appendChild(director);
 
-  const releaseDate = document.createElement("li");
-  releaseDate.textContent = `Release Date: ${this.film.release_date}`;
+  const releaseLabel = document.createElement("h4");
+  releaseLabel.textContent = "Release Year:";
+  detailsList.appendChild(releaseLabel);
+
+  const releaseDate = document.createElement("p");
+  releaseDate.textContent = this.film.release_date;
   detailsList.appendChild(releaseDate);
 
-  const rating = document.createElement("li");
-  rating.textContent = `Rating: ${this.film.rt_score}`;
+  const ratingLabel = document.createElement("h4");
+  ratingLabel.textContent = "Rating:";
+  detailsList.appendChild(ratingLabel);
+
+  const rating = document.createElement("p");
+  rating.textContent = this.film.rt_score;
   detailsList.appendChild(rating);
 
   return detailsList;
