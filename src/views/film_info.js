@@ -4,7 +4,6 @@ const FilmInfo = function (container, film) {
 };
 
 FilmInfo.prototype.display = function () {
-  this.container.innerHTML = "";
 
   const infoDiv = document.createElement("div");
 

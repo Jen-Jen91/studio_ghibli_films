@@ -17,11 +17,12 @@ FilmList.prototype.bindEvents = function () {
     const selectedFilm = event.detail;
     this.render(selectedFilm);
   });
-};
 
-FilmList.prototype.render = function (film) {
-  const filmView = new FilmInfo(this.container, film);
-  filmView.display();
+  PubSub.subscribe("Films:selected-films-by-year", (event) => {
+    //console.log(event.detail);
+    const selectedFilms = event.detail;
+    this.renderFilmsByYear(selectedFilms);
+  });
 };
 
 FilmList.prototype.renderAll = function (allFilms) {
@@ -29,6 +30,21 @@ FilmList.prototype.renderAll = function (allFilms) {
     const filmsView = new FilmInfo(this.container, film);
     filmsView.createTitle();
   });
+};
+
+FilmList.prototype.render = function (film) {
+  this.container.innerHTML = "";
+  const filmView = new FilmInfo(this.container, film);
+  filmView.display();
+};
+
+FilmList.prototype.renderFilmsByYear = function (selectedFilms) {
+  console.log(selectedFilms);
+  this.container.innerHTML = "";
+  selectedFilms.forEach((film) => {
+    const filmView = new FilmInfo(this.container, film);
+    filmView.display();
+  })
 };
 
 module.exports = FilmList;

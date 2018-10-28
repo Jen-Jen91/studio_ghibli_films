@@ -11,6 +11,11 @@ Films.prototype.bindEvents = function () {
     const selectedIndex = event.detail;
     this.publishFilmDetails(selectedIndex);
   });
+
+  PubSub.subscribe("SelectYear:change", (event) => {
+    const selectedYear = event.detail;
+    this.publishFilmsByYear(selectedYear);
+  });
 };
 
 Films.prototype.getData = function () {
@@ -31,6 +36,11 @@ Films.prototype.publishFilmDetails = function (index) {
   const selectedFilm = this.filmData[index];
   //console.log(selectedFilm);
   PubSub.publish("Films:selected-film", selectedFilm);
+};
+
+Films.prototype.publishFilmsByYear = function (year) {
+  const selectedFilms = this.filmData.filter(film => film.release_date === year);
+  PubSub.publish("Films:selected-films-by-year", selectedFilms);
 };
 
 module.exports = Films;
