@@ -1,4 +1,5 @@
 const PubSub = require("../helpers/pub_sub.js");
+const FilmInfo = require("./film_info.js");
 
 const FilmList = function (container) {
   this.container = container;
@@ -8,7 +9,7 @@ FilmList.prototype.bindEvents = function () {
   PubSub.subscribe("Films:selected-film", (event) => {
     //console.log(event.detail);
     const selectedFilm = event.detail;
-    this.display(selectedFilm);
+    this.render(selectedFilm);
   });
 };
 
@@ -17,15 +18,9 @@ FilmList.prototype.bindEvents = function () {
 //Add a 'view all' button
 //Organise dropdown alphabetically
 
-FilmList.prototype.display = function (film) {
-  this.container.innerHTML = "";
-  const title = document.createElement("h2");
-  title.textContent = film.title;
-  this.container.appendChild(title);
-
-  const description = document.createElement("p");
-  description.textContent = film.description;
-  this.container.appendChild(description);
+FilmList.prototype.render = function (film) {
+  const filmView = new FilmInfo(this.container, film);
+  filmView.display();
 };
 
 module.exports = FilmList;
