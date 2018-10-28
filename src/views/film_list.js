@@ -6,31 +6,16 @@ const FilmList = function (container) {
 };
 
 FilmList.prototype.bindEvents = function () {
-  // PubSub.subscribe("Films:all-film-data", (event) => {
-  //   //console.log(event.detail);
-  //   const allFilms = event.detail;
-  //   this.renderAll(allFilms);
-  // });
-
   PubSub.subscribe("Films:selected-film", (event) => {
-    //console.log(event.detail);
     const selectedFilm = event.detail;
     this.render(selectedFilm);
   });
 
   PubSub.subscribe("Films:selected-films-by-year", (event) => {
-    //console.log(event.detail);
     const selectedFilms = event.detail;
     this.renderFilmsByYear(selectedFilms);
   });
 };
-
-// FilmList.prototype.renderAll = function (allFilms) {
-//   allFilms.forEach((film) => {
-//     const filmsView = new FilmInfo(this.container, film);
-//     filmsView.createTitle();
-//   });
-// };
 
 FilmList.prototype.render = function (film) {
   this.container.innerHTML = "";

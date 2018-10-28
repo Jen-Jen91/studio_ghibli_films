@@ -16,7 +16,6 @@ SelectYear.prototype.bindEvents = function () {
 };
 
 SelectYear.prototype.populate = function (filmData) {
-
   const years = filmData.map(film => film.release_date);
 
   const uniqueYears = years.filter((year, index, yearArray) => yearArray.indexOf(year) === index);

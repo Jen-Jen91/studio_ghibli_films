@@ -13,7 +13,6 @@ ErrorView.prototype.bindEvents = function () {
 
 ErrorView.prototype.render = function (error) {
   console.error(error);
-
   this.container.innerHTML = "";
 
   const errorMessage = document.createElement("h2");

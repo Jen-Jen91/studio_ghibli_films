@@ -25,7 +25,6 @@ Films.prototype.getData = function () {
     .then((data) => {
      this.filmData = data;
      PubSub.publish("Films:all-film-data", this.filmData);
-     //console.log(this.filmData);
     })
    .catch((error) => {
       PubSub.publish("Films:error", error);
@@ -34,7 +33,6 @@ Films.prototype.getData = function () {
 
 Films.prototype.publishFilmDetails = function (index) {
   const selectedFilm = this.filmData[index];
-  //console.log(selectedFilm);
   PubSub.publish("Films:selected-film", selectedFilm);
 };
 
