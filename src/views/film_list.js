@@ -6,11 +6,11 @@ const FilmList = function (container) {
 };
 
 FilmList.prototype.bindEvents = function () {
-  PubSub.subscribe("Films:all-film-data", (event) => {
-    //console.log(event.detail);
-    const allFilms = event.detail;
-    this.renderAll(allFilms);
-  });
+  // PubSub.subscribe("Films:all-film-data", (event) => {
+  //   //console.log(event.detail);
+  //   const allFilms = event.detail;
+  //   this.renderAll(allFilms);
+  // });
 
   PubSub.subscribe("Films:selected-film", (event) => {
     //console.log(event.detail);
@@ -25,12 +25,12 @@ FilmList.prototype.bindEvents = function () {
   });
 };
 
-FilmList.prototype.renderAll = function (allFilms) {
-  allFilms.forEach((film) => {
-    const filmsView = new FilmInfo(this.container, film);
-    filmsView.createTitle();
-  });
-};
+// FilmList.prototype.renderAll = function (allFilms) {
+//   allFilms.forEach((film) => {
+//     const filmsView = new FilmInfo(this.container, film);
+//     filmsView.createTitle();
+//   });
+// };
 
 FilmList.prototype.render = function (film) {
   this.container.innerHTML = "";
@@ -39,7 +39,6 @@ FilmList.prototype.render = function (film) {
 };
 
 FilmList.prototype.renderFilmsByYear = function (selectedFilms) {
-  console.log(selectedFilms);
   this.container.innerHTML = "";
   selectedFilms.forEach((film) => {
     const filmView = new FilmInfo(this.container, film);
