@@ -7,7 +7,7 @@ const FilmList = require("./views/film_list.js");
 document.addEventListener("DOMContentLoaded", () => {
   console.log("JavaScript Loaded");
 
-  const errorContainer = document.querySelector("section#films");
+  const errorContainer = document.querySelector("body");
   const error = new ErrorView(errorContainer);
   error.bindEvents();
 

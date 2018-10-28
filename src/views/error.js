@@ -16,7 +16,8 @@ ErrorView.prototype.render = function (error) {
 
   this.container.innerHTML = "";
 
-  const errorMessage = document.createElement("p");
+  const errorMessage = document.createElement("h2");
+  errorMessage.classList.add("error-message");
   errorMessage.textContent = "Oops, something went wrong!";
   this.container.appendChild(errorMessage);
 };
