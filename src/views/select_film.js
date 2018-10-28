@@ -24,5 +24,4 @@ SelectFilm.prototype.populate = function (filmData) {
   });
 };
 
-
 module.exports = SelectFilm;
