@@ -1,18 +1,28 @@
 html {
   font-family: Palatino, serif;
   background-image: url("../images/background.jpg");
-  background-size: cover;
+  background-size: 100%;
   background-repeat: no-repeat;
+  background-color: LimeGreen;
 }
 
 h1 {
   font-size: 3em;
   text-align: center;
+  margin-bottom: 15px;
 }
 
-label {
-  font-style: italic;
+h4 {
+  margin-bottom: 0px;
+}
+
+p {
+  margin-top: 0px;
+}
+
+label, h3 {
   font-weight: bold;
+  font-style: italic;
 }
 
 .dropdown {
@@ -30,15 +40,7 @@ label {
   border: 2px solid black;
   padding: 0px 10px;
   margin: 10px 0px 10px 0px;
-  background-color: rgb(254, 254, 254, 0.75)
-}
-
-h4 {
-  margin-bottom: 0px;
-}
-
-p {
-  margin-top: 0px;
+  background-color: rgb(254, 254, 254, 0.75);
 }
 
 .error-message {
@@ -46,4 +48,16 @@ p {
   text-align: center;
   margin-top: 70px;
   background-color: rgb(254, 254, 254, 0.75)
+}
+
+.button {
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 25px;
+  padding: 5px 2px 2px 2px;
+  width: 150px;
+  margin: 0px 0px 25px 44%;
+  background-color: white;
 }

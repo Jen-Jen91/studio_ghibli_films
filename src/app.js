@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const error = new ErrorView(errorContainer);
   error.bindEvents();
 
-  const filmsButton = document.querySelector("button");
+  const filmsButton = document.querySelector(".button");
   const filmsSection = document.querySelector("section#films");
   const allFilms = new ViewAll(filmsButton, filmsSection);
   allFilms.bindEvents();
