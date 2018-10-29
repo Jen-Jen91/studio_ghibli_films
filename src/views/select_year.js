@@ -11,6 +11,8 @@ SelectYear.prototype.bindEvents = function () {
   });
   this.element.addEventListener("change", (event) => {
     const selectedYear = event.target.value;
+    const selectFilm = document.querySelector("#select-film");
+    selectFilm.selectedIndex = 0;
     PubSub.publish("SelectYear:change", selectedYear);
   });
 };

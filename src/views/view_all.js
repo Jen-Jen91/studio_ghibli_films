@@ -12,6 +12,10 @@ ViewAll.prototype.bindEvents = function () {
     this.allFilms = event.detail;
   });
   this.element.addEventListener("click", (event) => {
+    const selectFilm = document.querySelector("#select-film");
+    selectFilm.selectedIndex = 0;
+    const selectYear = document.querySelector("#select-year");
+    selectYear.selectedIndex = 0;
     this.displayAll(this.allFilms);
   });
 };
