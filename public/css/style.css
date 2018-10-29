@@ -4,6 +4,7 @@ html {
   background-size: 100%;
   background-repeat: no-repeat;
   background-color: LimeGreen;
+  background-attachment: fixed;
 }
 
 h1 {
