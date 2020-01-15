@@ -1,13 +1,11 @@
-const Films = require("./models/films.js");
-const ErrorView = require("./views/error.js");
-const ViewAll = require("./views/view_all.js");
-const SelectFilm = require("./views/select_film.js");
-const SelectYear = require("./views/select_year.js");
-const FilmList = require("./views/film_list.js");
+import Films from "./models/films.js";
+import ErrorView from "./views/error.js";
+import ViewAll from "./views/view_all.js";
+import SelectFilm from "./views/select_film.js";
+import SelectYear from "./views/select_year.js";
+import FilmList from "./views/film_list.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("JavaScript Loaded");
-
   const errorContainer = document.querySelector("body");
   const error = new ErrorView(errorContainer);
   error.bindEvents();

@@ -1,6 +1,6 @@
 # Studio Ghibli
 
-This front-end project makes a request to the Studio Ghibli API (https://ghibliapi.herokuapp.com/) and displays the film data. Users can choose to view all Studio Ghibli films or access specific titles or dates using the dropdown selectors. The code was written in JavaScript with HTML and CSS for the design.
+This front-end project makes a request to the Studio Ghibli API (https://ghibliapi.herokuapp.com/) and displays the film data. Users can choose to view all Studio Ghibli films or access specific titles using the dropdown selectors. The app was written in JavaScript with HTML and CSS.
 
 
 ### To run the app:
